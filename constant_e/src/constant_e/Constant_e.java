@@ -26,13 +26,14 @@ public class Constant_e {
         double e = 1;               //started with (1/0!)
         
         System.out.println("This program will prompt for a number and then\n"
-                +          "it will get that number's factorial value."
-                +          "which is then used to find constant e using"
+                +          "it will calculate a variant of Euler's number using"
                 +          "following formula:"
                 +          " e = 1 + (1/1!)+(1/2!)+(1/3!)...");
         do{
             System.out.print("Enter a value: ");
             num = input.nextInt();
+            if(num<0)
+                System.out.println("Please input a positive value.");
         }while(num<0);      //check for non-negative values
         
         
