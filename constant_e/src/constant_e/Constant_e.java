@@ -39,24 +39,14 @@ public class Constant_e {
         
        do{
             for(int i = num;i>0;i--){
-                fact*=i;
-            }                           //get first factorial first
+                fact*=i;                
+            }                           //5*4*3*2*1 = fact
             System.out.println("Factorial for "+num+": "+fact);
             e+=(1/fact);                //add to formula
             num--;                      //countdown so next factorial is n-1
             fact = 1;                   //re-initialize so NEW factorial is calculated
        }while(num>0);                   //1/0! = 1, this value is already
                                         //added when e was initialized.
-        
-        
         System.out.println("e = "+e);
-    
-            
-        
-        
-
-        
-        
     }
-    
 }

@@ -17,7 +17,7 @@ public class E_pow_x {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-                //declare variables
+        //declare variables
         Scanner input = new Scanner(System.in);
 
         //double is used for n! for sake of large quantities that 
@@ -38,8 +38,6 @@ public class E_pow_x {
             if(x<0)
                 System.out.println("Please input a positive value.");
         }while(x<0);      //check for non-negative values
-        
-        
        do{
             for(int i = num;i>0;i--){
                 fact*=i;
@@ -50,13 +48,7 @@ public class E_pow_x {
             fact = 1;                   //re-initialize so NEW factorial is calculated
        }while(num>0);                   //1/0! = 1, this value is already
                                         //added when e was initialized.
-        
-       //because this is better than performing exponential 
-       //calculations multiple times. This results in the same answer and 
-       //also requires less code.
        e=Math.pow(e, x);
        System.out.println("e^x = "+e);
-    
-        
     }//exit main
 }//exit package
