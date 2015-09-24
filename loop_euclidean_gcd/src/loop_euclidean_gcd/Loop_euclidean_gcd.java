@@ -22,6 +22,8 @@ public class Loop_euclidean_gcd {
         int low;
         Scanner input = new Scanner(System.in);
         
+        System.out.printf("Calculate Greatest Common Divisor using\n"+
+                          "Euclidean Algorithm applied in a Loop.\n");
         System.out.printf("Input a number: ");
         x=input.nextInt();
         System.out.printf("Input a number: ");
