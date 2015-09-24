@@ -18,16 +18,19 @@ public class Loop_euclidean_gcd {
         int x;
         int y;
         int gcd;
+        int max;
+        int low;
         Scanner input = new Scanner(System.in);
         
-        System.out.printf("Input a number (high): ");
+        System.out.printf("Input a number: ");
         x=input.nextInt();
-        System.out.printf("Input a number (low): ");
+        System.out.printf("Input a number: ");
         y=input.nextInt();
-        
-        gcd = gcd(x,y);
-        System.out.printf("The Greatest Common Divisor of %d and %d is: %d%n",x,y,gcd);
-        
+        //get max/low values
+        max = max(x,y);
+        low = low(x,y);
+        gcd = gcd(max,low);
+        System.out.printf("The Greatest Common Divisor of %d and %d is: %d%n",max,low,gcd);
     }
     static int gcd(int max, int low){
         int r;
@@ -39,6 +42,17 @@ public class Loop_euclidean_gcd {
                 low=r;
             }
         }while(r!=0);
+        return low;
+    }
+    static int max(int num1, int num2){
+        int max = num1;
+        if(num2>max) max=num2;
+        return max;
+    }
+    
+    static int low(int num1, int num2){
+        int low = num1;
+        if(num2<low) low=num2;
         return low;
     }
     
