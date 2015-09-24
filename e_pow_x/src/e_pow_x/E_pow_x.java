@@ -24,6 +24,7 @@ public class E_pow_x {
         //appear after 12 when using integer, and after 21 in float
         int num=15;
         int x;                      //exponent for mathematical constant in 
+        int pow;
                                     //formula e^x
         double fact=1;              //initialized to 0!
         double e = 1;               //started with (1/0!)
@@ -35,6 +36,7 @@ public class E_pow_x {
         do{
             System.out.print("Enter a value: ");
             x = input.nextInt();
+            pow = x;
             if(x<0)
                 System.out.println("Please input a positive value.");
         }while(x<0);      //check for non-negative values
@@ -43,9 +45,14 @@ public class E_pow_x {
                 fact*=i;
             }                           //get first factorial first
             //System.out.println("Factorial for "+num+": "+fact);
-            e+=(1/fact);                //add to formula
+        
+            
+            e+=(1/fact);                //add to formula; replace 1 with x to the power
+                                        //of whatever the iteration of the loop is.
+            
             num--;                      //countdown so next factorial is n-1
             fact = 1;                   //re-initialize so NEW factorial is calculated
+            
        }while(num>0);                   //1/0! = 1, this value is already
                                         //added when e was initialized.
        e=Math.pow(e, x);
