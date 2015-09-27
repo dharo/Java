@@ -46,7 +46,6 @@ public class Temp_conversion {
         }
         
     }
-
     
     static float toCelsius(float fah){
         return (float)(5.0/9.0*(fah-32));
