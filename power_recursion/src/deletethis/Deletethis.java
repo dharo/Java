@@ -18,13 +18,13 @@ static int rcount=0;
     
     public static void main(String[] args) {
         double pow, rpow;
-        pow= power(3,20);
-        rpow=rpower(3,20);
-        System.out.println("Power result (looped): "+pow);
+        //pow= power(3,5);
+        rpow=rpower(2,7);
+        //System.out.println("Power result (looped): "+pow);
         System.out.println("Power result (recursive): "+rpow);
         
-        System.out.println("Count for iteration: "+count);
-        System.out.println("Count for recursive: "+rcount);
+        System.out.println("Count 1: "+count);
+        System.out.println("Count 2: "+rcount);
     }
     static double power(double b, double n){
         
@@ -33,21 +33,19 @@ static int rcount=0;
         else{
             result = b;
             for(int i=1;i<n;i++){
-                count++;
                 result*=b;
             }
         }
         return result;
     }
     static double rpower(double b, double n){
-        rcount++;
         if(n==0) return 1;
 
         if(n%2==0){
-            
+            count++;
             return rpower(b*b,n/2);
-        }
-        
+        }                           //alternatively called^v
+        rcount++;
         return b*rpower(b,(n-1));
     }
 }
