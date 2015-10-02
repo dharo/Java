@@ -48,10 +48,10 @@ public class Temp_conversion {
     }
     
     static float toCelsius(float fah){
-        return (float) (5.0/9.0*(fah-32));
+        return (5.0f/9.0f*(fah-32));
     }
     
     static float toFahrenheit(float cel){
-        return (float) (9.0/5.0*cel+32);
+        return (9.0f/5.0f*cel+32);
     }
 }
