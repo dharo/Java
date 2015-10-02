@@ -20,7 +20,7 @@ public class Temp_conversion {
         Scanner input = new Scanner(System.in);
         int choice;
         float temp;
-        double conversion;
+        float conversion;
         
         System.out.printf("This program will convert temperatures from\n"+
                           "Celsius to Fahrenheit or Fahrenheit to Celsius\n");
@@ -33,7 +33,7 @@ public class Temp_conversion {
         
         //enter  atemp to convert
         System.out.printf("Enter the temperature you would like to convert.\n");
-        temp = input.nextInt();
+        temp = input.nextFloat();
         
         //send to appropriate methods
         if(choice==1){                  //Fahrenheit to Celsius
@@ -48,10 +48,10 @@ public class Temp_conversion {
     }
     
     static float toCelsius(float fah){
-        return (float)(5.0/9.0*(fah-32));
+        return (float) (5.0/9.0*(fah-32));
     }
     
     static float toFahrenheit(float cel){
-        return (float)(9.0/5.0*cel+32);
+        return (float) (9.0/5.0*cel+32);
     }
 }
