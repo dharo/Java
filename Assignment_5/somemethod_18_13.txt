@@ -1,4 +1,15 @@
 What does this program do?
+
+	1. The main function passes an integer array (with 10 elements) and the number 0 to 
+	   someMethod();
+	2. someMethod is a recursive function that returns a String.
+	3. 
+	4. someMethod calls itself recursively while adding 1 to x, until 0
+	   (or x in this case) grows to be greater than the length of the array,
+	   which results in returning a space.
+	5. This ultimately returns the array in reverse order.
+	6. somemethod(); is a recursive function for reversing an array and returning it as a 		   string. 
+
 // Exercise 18.13 Solution: SomeClass.java
 public class SomeClass{
 	public static String someMethod( int[] array2, int x ){
