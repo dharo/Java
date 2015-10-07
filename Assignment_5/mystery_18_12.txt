@@ -1,4 +1,11 @@
 What does this program do?
+	1. Passes an array of integers and array size to MysteryClass
+	2. Mystery class is a recursive function which stops when it reaches
+	   the first element in the array.
+	3. The Recursive call returns the last element in the array contained
+	   in the call and adds the element with the one before it
+	4. This ultimately ends with returning the sum of the elements in the 
+	   array. Sum of the elements 1 through 10 = 55
 
 // Exercise 18.12 Solution: MysteryClass.java
 public class MysteryClass{
