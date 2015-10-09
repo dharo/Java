@@ -33,16 +33,16 @@ public class Recursive_is_palindrome {
         //display string to check for palindrome
         System.out.println("Your input was: "+s);
         //make all lowercase
-        i=s.toLowerCase();
+        i = s.toLowerCase();
         //strip string of any punctuation marks and spaces
         //using regular expressions
-        i=i.replaceAll("\\s", "");      //spaces
-        i=i.replaceAll("\\'","");       //apostrophies
-        i=i.replaceAll("\\.","");       //periods
-        i=i.replaceAll("\"","");        //double quotes
-        i=i.replaceAll("-", "");        //dashes/hyphens
-        i=i.replaceAll("!", "");        //exclamation points
-        i=i.replaceAll(",", "");        //commas
+        i = i.replaceAll("\\s", "");      //spaces
+        i = i.replaceAll("\\'","");       //apostrophies
+        i = i.replaceAll("\\.","");       //periods
+        i = i.replaceAll("\"","");        //double quotes
+        i = i.replaceAll("-", "");        //dashes/hyphens
+        i = i.replaceAll("!", "");        //exclamation points
+        i = i.replaceAll(",", "");        //commas
         
         //print string's raw text without punctuation marks and spaces
         System.out.println(i);
@@ -59,10 +59,12 @@ public class Recursive_is_palindrome {
         System.out.println("\nIs \'"+s+"\' a palindrome? "+ f);
     }
     public static boolean isPalindrome(char[] word, int first, int last){
-        if(first == last) return true;      //base case
-                                            //recursive call
-        else if(word[first] == word[last]) return isPalindrome(word,first+1,last-1);
-                                            //not a palindrome
-        else return false;
+        if(first == last || first > last) return true;          //base case returns true
+                                                                //when the indices meet in the middle
+                                                                //or they crossed and started checking
+                                                                //values already seen
+        else if(word[first] == word[last])      //recursive call
+            return isPalindrome(word,first+1,last-1);                    
+        else return false;                      //if not a palindrome
     }
 }
