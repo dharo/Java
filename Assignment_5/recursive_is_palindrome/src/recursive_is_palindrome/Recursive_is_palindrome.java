@@ -35,20 +35,15 @@ public class Recursive_is_palindrome {
         //make all lowercase
         i=s.toLowerCase();
         //strip string of any punctuation marks and spaces
-        //spaces
-        i=i.replaceAll("\\s", "");
-        //apostrophies
-        i=i.replaceAll("\\'","");
-        //periods
-        i=i.replaceAll("\\.","");
-        //double quotes
-        i=i.replaceAll("\"","");
-        //dashes go bye bye
-        i=i.replaceAll("-", "");
-        //exclamation points be gone!
-        i=i.replaceAll("!", "");
-        //smell ya later commas
-        i=i.replaceAll(",", "");
+        //using regular expressions
+        i=i.replaceAll("\\s", "");      //spaces
+        i=i.replaceAll("\\'","");       //apostrophies
+        i=i.replaceAll("\\.","");       //periods
+        i=i.replaceAll("\"","");        //double quotes
+        i=i.replaceAll("-", "");        //dashes/hyphens
+        i=i.replaceAll("!", "");        //exclamation points
+        i=i.replaceAll(",", "");        //commas
+        
         //print string's raw text without punctuation marks and spaces
         System.out.println(i);
         //turn string to char array
