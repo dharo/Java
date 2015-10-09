@@ -18,16 +18,20 @@ import java.util.Scanner;
 
 public class Recursive_is_palindrome {
     public static void main(String[] args) {
+        //declare variables
         Scanner input = new Scanner(System.in);
         String s;// = "A man, a plan, a cat, a ham, a yak, a yam, a hat, a canal-Panama!";
+        String i;           //create string to manipulate
+        char [] j;          //create character array to send to isPalindrome
+        int stringSize;     //string size variable
+        boolean f;          //this will hold the return value of the recursive method isPalindrome
+
+        //prompt for input
         System.out.println("Input a string to check if it is a palindrome: ");
         s = input.nextLine();
-        String i;
-        char [] j;
-        int stringSize;
-        boolean f;
+
         //display string to check for palindrome
-        System.out.println(s);
+        System.out.println("Your input was: "+s);
         //make all lowercase
         i=s.toLowerCase();
         //strip string of any punctuation marks and spaces
@@ -46,18 +50,18 @@ public class Recursive_is_palindrome {
         //smell ya later commas
         i=i.replaceAll(",", "");
         //print string's raw text without punctuation marks and spaces
-        System.out.println(i);
+        //System.out.println(i);
         //turn string to char array
         j = i.toCharArray();
         //print char array
-        for(int k=0;k<j.length;k++){
-            System.out.print(j[k]);
-        }
+        //for(int k=0;k<j.length;k++){
+        //    System.out.print(j[k]);
+        //}
         //now that string is prepped, start isPalindrome (recursive)
         stringSize = j.length;
         f = isPalindrome(j,0,stringSize-1);
         
-        System.out.println("\nIs "+s+" a palindrome? "+ f);
+        System.out.println("\nIs \'"+s+"\' a palindrome? "+ f);
     }
     public static boolean isPalindrome(char[] word, int first, int last){
         if(first == last) return true;      //base case
