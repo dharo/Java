@@ -12,11 +12,16 @@
  */
 package recursive_is_palindrome;
 
+import java.util.Scanner;
+
 
 
 public class Recursive_is_palindrome {
     public static void main(String[] args) {
-        String s = "A man, a plan, a cat, a ham, a yak, a yam, a hat, a canal-Panama!";
+        Scanner input = new Scanner(System.in);
+        String s;// = "A man, a plan, a cat, a ham, a yak, a yam, a hat, a canal-Panama!";
+        System.out.println("Input a string to check if it is a palindrome: ");
+        s = input.nextLine();
         String i;
         char [] j;
         int stringSize;
