@@ -1,6 +1,6 @@
 /*
     David Haro
-    October 8, 2015
+    October 12, 2015
     Java: 18A
     Assignment 5
 
@@ -9,6 +9,12 @@
     man a plan a canal panama.” Write a recursive method testPalindrome that returns boolean value
     true if the string stored in the array is a palindrome and false otherwise. The method should ignore
     spaces and punctuation in the string.
+
+    **********This method manipulates string via char[] manipulation**********
+    Tested with Palindrome Sentences from the following website: 
+    https://www.cs.arizona.edu/icon/oddsends/palinsen.htm
+
+
  */
 package recursive_is_palindrome;
 
@@ -23,37 +29,30 @@ public class Recursive_is_palindrome {
         String s;// = "A man, a plan, a cat, a ham, a yak, a yam, a hat, a canal-Panama!";
         String i;           //create string to manipulate
         char [] j;          //create character array to send to isPalindrome
-        int stringSize;     //string size variable
+        int size;           //char[] size variable
         boolean f;          //this will hold the return value of the recursive method isPalindrome
 
         //prompt for input
         System.out.println("Input a string to check if it is a palindrome: ");
         s = input.nextLine();
-
         //display string to check for palindrome
         System.out.println("Your input was: "+s);
+        
         //make all lowercase
         i = s.toLowerCase();
-        //strip string of punctuation using replaceAll()
-        i = stripString(i);
+        j = strip_toChar(i);          //strip punctuation and convert to char[]
         
-        
-        
-        //print string's raw text without punctuation marks and spaces
-        //System.out.println("Your input (when stripped of punctuation and spaces):");
-        //System.out.println(i);
-        //turn string to char array
-        j = i.toCharArray();
-        //print char array
-        //for(int k=0;k<j.length;k++){
-        //    System.out.print(j[k]);
-        //}
         //now that string is prepped, start isPalindrome (recursive)
-        stringSize = j.length;
-        f = isPalindrome(j,0,stringSize-1);
+        size = j.length;
+        f = isPalindrome(j,0,size-1); //recursive palindrome check
         
+        //Print results
         System.out.println("\nIs \'"+s+"\' a palindrome? "+ f);
     }
+    
+    
+    //recursive function to check for palindrome
+    //returns true or false
     public static boolean isPalindrome(char[] word, int first, int last){
         if(first == last || first > last) return true;          //base case returns true
                                                                 //when the indices meet in the middle
@@ -63,18 +62,21 @@ public class Recursive_is_palindrome {
             return isPalindrome(word,first+1,last-1);                    
         else return false;                      //if not a palindrome
     }
-    public static String stripString(String i){
-        //strip string of any punctuation marks and spaces
-        //using regular expressions
-        i = i.replaceAll("\\s", "");      //spaces
-        i = i.replaceAll("\\'","");       //apostrophies
-        i = i.replaceAll("\\.","");       //periods
-        i = i.replaceAll("\"","");        //double quotes
-        i = i.replaceAll("-", "");        //dashes/hyphens
-        i = i.replaceAll("!", "");        //exclamation points
-        i = i.replaceAll(",", "");        //commas
-        
-        return i;
+    
+    //strips string of punctuation elements
+    //and returns a character array
+    public static char [] strip_toChar(String i){
+        String x = "";
+        char [] f;
+        //manipulate string to remove punctuation and spaces
+        for(int k=0;k<i.length();k++){
+            if(i.charAt(k) > 96 && i.charAt(k) < 123)   //ASCII char 97 - 122
+                x += i.charAt(k);                       //are lowercase alphabet
+        }
+        //this is stripped string
+        System.out.println("This is the stripped string: " + x);
+        f = x.toCharArray();
+        return f;
     }
     
 }
