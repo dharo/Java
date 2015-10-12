@@ -1,0 +1,46 @@
+This week I figured out a second way of striping a string of their punctuation.
+Instead of using replaceAll() (which uses regular expressions to remove a char from a string)
+I instead made all characters lowercase, after this I iterated through the string and each time
+the character was a lowercase letter (ASCII range 97-122) I added that letter to a new string.
+Once this was done, I had the string converted to a character array and returned. I was able to
+do more than replaceAll() with less code.
+
+This is the method I used for removing punctuation
+    //strips string of punctuation elements
+    //and returns a character array
+    public static char [] strip_toChar(String i){
+        String x = "";
+        char [] f;
+        //manipulate string to remove punctuation and spaces
+        //characters can be compared with ASCII
+        //this method compares with range of LOWERCASE ASCII letters
+        for(int k=0;k<i.length();k++){
+            if(i.charAt(k) > 96 && i.charAt(k) < 123)   //ASCII char 97 - 122
+                x += i.charAt(k);                                   //lowercase alphabet
+        }
+        //this is stripped string
+        System.out.println("This is the stripped string: " + x);
+        //might as well return a char[]
+        f = x.toCharArray();
+        return f;
+    }
+
+    public static boolean isPalindrome(char[] word, int first, int last){
+        if(first == last || first > last) return true;          //base case returns true
+                                                                                               //when the indices meet in the middle
+                                                                                               //or they crossed and started checking
+                                                                                               //values already seen
+        else if(word[first] == word[last])                      //recursive call
+            return isPalindrome(word,first+1,last-1);                   
+        else return false;                                             //if not a palindrome
+    }
+
+
+Source code is attached and can be found at:
+https://github.com/dharo/Java-CSC-18A/blob/master/Assignment_6/recursive_is_palindrome_2/src/recursive_is_palindrome/Recursive_is_palindrome.java
+
+Palindrome Sentences can be found at:
+https://www.cs.arizona.edu/icon/oddsends/palinsen.htm
+
+
+
