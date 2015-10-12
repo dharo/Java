@@ -34,8 +34,10 @@ public class Recursive_is_palindrome {
         System.out.println("Your input was: "+s);
         //make all lowercase
         i = s.toLowerCase();
-        //strip string of punctuation
-        i = strip(i);
+        //strip string of punctuation using replaceAll()
+        i = stripString(i);
+        
+        
         
         //print string's raw text without punctuation marks and spaces
         System.out.println("Your input (when stripped of punctuation and spaces):");
@@ -61,7 +63,7 @@ public class Recursive_is_palindrome {
             return isPalindrome(word,first+1,last-1);                    
         else return false;                      //if not a palindrome
     }
-    public static String strip(String i){
+    public static String stripString(String i){
         //strip string of any punctuation marks and spaces
         //using regular expressions
         i = i.replaceAll("\\s", "");      //spaces
