@@ -34,15 +34,8 @@ public class Recursive_is_palindrome {
         System.out.println("Your input was: "+s);
         //make all lowercase
         i = s.toLowerCase();
-        //strip string of any punctuation marks and spaces
-        //using regular expressions
-        i = i.replaceAll("\\s", "");      //spaces
-        i = i.replaceAll("\\'","");       //apostrophies
-        i = i.replaceAll("\\.","");       //periods
-        i = i.replaceAll("\"","");        //double quotes
-        i = i.replaceAll("-", "");        //dashes/hyphens
-        i = i.replaceAll("!", "");        //exclamation points
-        i = i.replaceAll(",", "");        //commas
+        //strip string of punctuation
+        i = strip(i);
         
         //print string's raw text without punctuation marks and spaces
         System.out.println("Your input (when stripped of punctuation and spaces):");
@@ -67,5 +60,18 @@ public class Recursive_is_palindrome {
         else if(word[first] == word[last])      //recursive call
             return isPalindrome(word,first+1,last-1);                    
         else return false;                      //if not a palindrome
+    }
+    public static String strip(String i){
+        //strip string of any punctuation marks and spaces
+        //using regular expressions
+        i = i.replaceAll("\\s", "");      //spaces
+        i = i.replaceAll("\\'","");       //apostrophies
+        i = i.replaceAll("\\.","");       //periods
+        i = i.replaceAll("\"","");        //double quotes
+        i = i.replaceAll("-", "");        //dashes/hyphens
+        i = i.replaceAll("!", "");        //exclamation points
+        i = i.replaceAll(",", "");        //commas
+        
+        return i;
     }
 }
