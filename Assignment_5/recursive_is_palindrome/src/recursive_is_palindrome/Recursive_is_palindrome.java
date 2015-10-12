@@ -45,6 +45,7 @@ public class Recursive_is_palindrome {
         i = i.replaceAll(",", "");        //commas
         
         //print string's raw text without punctuation marks and spaces
+        System.out.println("Your input (when stripped of punctuation and spaces):");
         System.out.println(i);
         //turn string to char array
         j = i.toCharArray();
