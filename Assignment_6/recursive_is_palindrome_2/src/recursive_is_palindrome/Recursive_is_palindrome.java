@@ -40,11 +40,11 @@ public class Recursive_is_palindrome {
         
         //make all lowercase
         i = s.toLowerCase();
-        j = strip_toChar(i);          //strip punctuation and convert to char[]
+        j = strip_toChar(i);          //strip punctuation and convert string to char[]
         
         //now that string is prepped, start isPalindrome (recursive)
-        size = j.length;
-        f = isPalindrome(j,0,size-1); //recursive palindrome check
+        size = j.length;              //but first lets get the length of char[]
+        f = isPalindrome(j,0,size-1); //recursive palindrome check (T/F)
         
         //Print results
         System.out.println("\nIs \'"+s+"\' a palindrome? "+ f);
@@ -69,12 +69,15 @@ public class Recursive_is_palindrome {
         String x = "";
         char [] f;
         //manipulate string to remove punctuation and spaces
+        //characters can be compared with ASCII
+        //this method compares with range of LOWERCASE ASCII letters
         for(int k=0;k<i.length();k++){
             if(i.charAt(k) > 96 && i.charAt(k) < 123)   //ASCII char 97 - 122
                 x += i.charAt(k);                       //are lowercase alphabet
         }
         //this is stripped string
         System.out.println("This is the stripped string: " + x);
+        //might as well return a char[]
         f = x.toCharArray();
         return f;
     }
