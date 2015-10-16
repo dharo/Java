@@ -72,9 +72,9 @@ public class Recursive_is_palindrome {
         //characters can be compared with ASCII
         //this method compares with range of LOWERCASE ASCII letters
         for(int k=0;k<i.length();k++){
-            if(i.charAt(k) > 96 && i.charAt(k) < 123)   //ASCII char 97 - 122
-                x += i.charAt(k);                       //are lowercase alphabet
-        }
+            if(i.charAt(k) > 96 && i.charAt(k) < 123 || i.charAt(k)> 47 && i.charAt(k)<58)   //ASCII char 97 - 122
+                x += i.charAt(k);                                                            //are lowercase alphabet
+        }                                                                                    //48-57 are numbers 0-9
         //this is stripped string
         System.out.println("This is the stripped string: " + x);
         //might as well return a char[]
