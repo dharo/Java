@@ -141,7 +141,21 @@ public class Date {
         else if(this.month == 7 && endOfMonth == true){
             //nextMonth AND setDay to 1
         }
-        
+        else if(this.month == 8 && endOfMonth == true){
+            //nextMonth AND setDay to 1
+        }
+        else if(this.month == 9 && endOfMonth == true){
+            //nextMonth AND setDay to 1
+        }
+        else if(this.month == 10 && endOfMonth == true){
+            //nextMonth AND setDay to 1
+        }
+        else if(this.month == 11 && endOfMonth == true){
+            //nextMonth AND setDay to 1
+        }
+        else if(this.month == 12 && endOfMonth == true){
+            //nexthMonth, nextYear, AND setDay to 1
+        }
         
         
         
