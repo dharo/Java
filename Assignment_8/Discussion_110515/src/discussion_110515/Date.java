@@ -116,7 +116,7 @@ public class Date {
         //this method will take the current day and make it the next day
         //this method will make sure the next date is valid by performing 2 tasks
             //1. If day is greater than possible for that month, it will increment month AND reset day to 1
-            //2. If day and month is greater than possible, increment year AND reset day to 1
+            //2. If day and month is greater than possible, increment year AND setMonth to 1 AND setDay to 1
         
         if(this.month == 2 && this.day == 28 && isLeapYear() == true)
             setDay(this.day+1);         //add one day to date, set day will check if it is valid.
